@@ -10,48 +10,48 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class Cliente implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer numId;
-    private String nombreCliente;
-    private String emailCliente;
-    private Integer edadCliente;
-    private String paswordCliente;
+    private Integer idClient;
+    private String name;
+    private String email;
+    private Integer age;
+    private String password;
 
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "cliente")
     @JsonIgnoreProperties("cliente")
-    private List<Reserva> reservas;
+    private List<Reserva> reservations;
 
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "cliente")
     @JsonIgnoreProperties("cliente")
-    private List<Mensaje> mensajes;
+    private List<Mensaje> messages;
 
-    public Integer getNumId() {
-        return numId;
+    public Integer getIdClient() {
+        return idClient;
     }
-    public void setNumId(Integer numId) {
-        this.numId = numId;
+    public void setIdClient(Integer idClient) {
+        this.idClient = idClient;
     }
-    public String getNombreCliente() {
-        return nombreCliente;
+    public String getName() {
+        return name;
     }
-    public void setNombreCliente(String nombreCliente) {
-        this.nombreCliente = nombreCliente;
+    public void setName(String name) {
+        this.name = name;
     }
-    public String getEmailCliente() {
-        return emailCliente;
+    public String getEmail() {
+        return email;
     }
-    public void setEmailCliente(String emailCliente) {
-        this.emailCliente = emailCliente;
+    public void setEmail(String email) {
+        this.email = email;
     }
-    public Integer getEdadCliente() {
-        return edadCliente;
+    public Integer getAge() {
+        return age;
     }
-    public void setEdadCliente(Integer edadCliente) {
-        this.edadCliente = edadCliente;
+    public void setAge(Integer age) {
+        this.age = age;
     }
-    public String getPaswordCliente() {
-        return paswordCliente;
+    public String getPassword() {
+        return password;
     }
-    public void setPaswordCliente(String paswordCliente) {
-        this.paswordCliente = paswordCliente;
+    public void setPassword(String password) {
+        this.password = password;
     } 
 }

@@ -10,67 +10,62 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class Auditorio implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer numId;
-    private String propietario;
-    private String nombre;
-    private Integer capacidad;
-    private String decripcion;
+    private Integer id;
+    private String owner;
+    private String name;
+    private Integer capacity;
+    private String description;
 
     @ManyToOne
     @JoinColumn(name="categoria_id")
     @JsonIgnoreProperties("auditorios")
-    private Categoria categoria;
+    private Categoria category;
 
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "auditorio")
     @JsonIgnoreProperties("auditorio")
-    private List<Mensaje> mensajes;
+    private List<Mensaje> messages;
 
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "auditorio")
     @JsonIgnoreProperties("auditorio")
-    private List<Reserva> reservas;
-
-    @ManyToOne
-    @JoinColumn(name="administrador_id")
-    @JsonIgnoreProperties("auditorios")
-    private Administrador administrador;
+    private List<Reserva> reservations;
    
-    public Integer getNumId() {
-        return numId;
+    public Integer getId() {
+        return id;
     }
 
-    public void setNumId(Integer numId) {
-        this.numId = numId;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
-    public String getPropietario() {
-        return propietario;
+    public String getOwner() {
+        return owner;
     }
 
-    public void setPropietario(String propietario) {
-        this.propietario = propietario;
+    public void setOwner(String owner) {
+        this.owner = owner;
     }
 
-    public String getNombre() {
-        return nombre;
+    public String getName() {
+        return name;
     }
 
-    public void setNombre(String nombre) {
-        this.nombre = nombre;
+    public void setName(String name) {
+        this.name = name;
     }
 
-    public Integer getCapacidad() {
-        return capacidad;
+    public Integer getCapacity() {
+        return capacity;
     }
 
-    public void setCapacidad(Integer capacidad) {
-        this.capacidad = capacidad;
+    public void setCapacity(Integer capacity) {
+        this.capacity = capacity;
     }
 
     public String getDecripcion() {
-        return decripcion;
+        return description;
     }
 
-    public void setDecripcion(String decripcion) {
-        this.decripcion = decripcion;
+    public void setDecripcion(String description) {
+        this.description = description;
     }
 }

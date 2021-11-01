@@ -12,24 +12,24 @@ import co.edu.usa.reto3.audience.model.Auditorio;
 
 public class AuditorioServicio {
     @Autowired
-    AuditorioRepositorio departamentoRepositorio;
+    AuditorioRepositorio auditorioRepositorio;
 
     public List<Auditorio> getAll(){
-        return departamentoRepositorio.getAll();
+        return auditorioRepositorio.getAll();
     }
 
-    public Optional<Auditorio>getDepartamento(int id){
-        return departamentoRepositorio.getDepartamento(id);
+    public Optional<Auditorio>getAuditorio(int id){
+        return auditorioRepositorio.getAuditorio(id);
     }
 
     public Auditorio save(Auditorio dpto){
         //Verificar si el id es nulo
         if (dpto.getNumId()==null) {
-            return departamentoRepositorio.save(dpto);
+            return auditorioRepositorio.save(dpto);
         }else{//Verifico si existe el id o no en la base de datos
-            Optional<Auditorio> consulta=departamentoRepositorio.getDepartamento(dpto.getNumId());
+            Optional<Auditorio> consulta=auditorioRepositorio.getAuditorio(dpto.getNumId());
         if (consulta.isEmpty()) {
-            return departamentoRepositorio.save(dpto);
+            return auditorioRepositorio.save(dpto);
         }else{
             return dpto;
         }

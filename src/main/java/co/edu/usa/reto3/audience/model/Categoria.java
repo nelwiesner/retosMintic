@@ -10,31 +10,31 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class Categoria implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer numId;
-    private String nombreCategoria;
-    private String descripcionCategoria;
+    private Integer id;
+    private String name;
+    private String description;
 
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "categoria")
     @JsonIgnoreProperties("categoria")
-    private List<Auditorio> auditorios;
+    private List<Auditorio> audiences;
 
-    public Integer getNumId() {
-        return numId;
+    public Integer getId() {
+        return id;
     }
-    public void setNumId(Integer numId) {
-        this.numId = numId;
+    public void setId(Integer id) {
+        this.id = id;
     }
-    public String getNombreCategoria() {
-        return nombreCategoria;
+    public String getName() {
+        return name;
     }
-    public void setNombreCategoria(String nombreCategoria) {
-        this.nombreCategoria = nombreCategoria;
+    public void setName(String name) {
+        this.name = name;
     }
-    public String getDescripcionCategoria() {
-        return descripcionCategoria;
+    public String getDescription() {
+        return description;
     }
-    public void setDescripcionCategoria(String descripcionCategoria) {
-        this.descripcionCategoria = descripcionCategoria;
+    public void setDescription(String description) {
+        this.description = description;
     }
 
 }

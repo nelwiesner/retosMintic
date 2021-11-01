@@ -10,44 +10,43 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class Reserva implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer numId;
-    private Date fechaCreacionDate;
-    private Date fechaEntregaDate;
-    private String statusReserva;
-    private String emailReserva;
+    private Integer idReservation;
+    private Date startDate;
+    private Date devolutionDate;
+    private String status;
 
     @ManyToOne
     @JoinColumn(name="auditorio_id")
     @JsonIgnoreProperties("reserva")
-    private Auditorio auditorio;
+    private Auditorio audience;
 
     @ManyToOne
     @JoinColumn(name="cliente_id")
     @JsonIgnoreProperties("reserva")
-    private Cliente cliente;
+    private Cliente client;
 
     @ManyToOne
     @JoinColumn(name="calificacion_id")
     @JsonIgnoreProperties("reserva")
-    private Calificacion calificacion;
+    private Calificacion score;
 
-    public Integer getNumId() {
-        return numId;
+    public Integer getidReservation() {
+        return idReservation;
     }
-    public void setNumId(Integer numId) {
-        this.numId = numId;
+    public void setidReservation(Integer idReservation) {
+        this.idReservation = idReservation;
     }
-    public Date getFechaCreacionDate() {
-        return fechaCreacionDate;
+    public Date getstartDate() {
+        return startDate;
     }
-    public void setFechaCreacionDate(Date fechaCreacionDate) {
-        this.fechaCreacionDate = fechaCreacionDate;
+    public void setstartDate(Date startDate) {
+        this.startDate = startDate;
     }
-    public Date getFechaEntregaDate() {
-        return fechaEntregaDate;
+    public Date getdevolutionDate() {
+        return devolutionDate;
     }
-    public void setFechaEntregaDate(Date fechaEntregaDate) {
-        this.fechaEntregaDate = fechaEntregaDate;
+    public void setdevolutionDate(Date devolutionDate) {
+        this.devolutionDate = devolutionDate;
     }
     public String getStatusReserva() {
         return statusReserva;

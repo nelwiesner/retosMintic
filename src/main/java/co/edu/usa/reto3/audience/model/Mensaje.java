@@ -9,37 +9,30 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 public class Mensaje implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer numId;
-    private String mensaje;
-    private String emailMensaje;
+    private Integer idMessage;
+    private String messageText;
 
     @ManyToOne
     @JoinColumn(name="auditorio_id")
     @JsonIgnoreProperties("mensaje")
-    private Auditorio auditorio;
+    private Auditorio audience;
 
     @ManyToOne
     @JoinColumn(name="cliente_id")
     @JsonIgnoreProperties("mensaje")
-    private Cliente cliente;
+    private Cliente client;
 
-    public Integer getNumId() {
-        return numId;
+    public Integer getIdMessage() {
+        return idMessage;
     }
-    public void setNumId(Integer numId) {
-        this.numId = numId;
+    public void setIdMessage(Integer idMessage) {
+        this.idMessage = idMessage;
     }
-    public String getMensaje() {
-        return mensaje;
+    public String getMessageText() {
+        return messageText;
     }
-    public void setMensaje(String mensaje) {
-        this.mensaje = mensaje;
-    }
-    public String getEmailMensaje() {
-        return emailMensaje;
-    }
-    public void setEmailMensaje(String emailMensaje) {
-        this.emailMensaje = emailMensaje;
+    public void setMessageText(String messageText) {
+        this.messageText = messageText;
     }
 
 }
