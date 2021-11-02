@@ -23,10 +23,10 @@ public class ClienteServicio {
 
     public Cliente save(Cliente cliente){
         //Verificar si el id es nulo
-        if(cliente.getNumId()==null){
+        if(cliente.getIdClient()==null){
             return clienteRepositorio.save(cliente);
         }else{//Verifico si existe o no en la base de datos
-            Optional<Cliente> consulta=clienteRepositorio.getCliente(cliente.getNumId());
+            Optional<Cliente> consulta=clienteRepositorio.getCliente(cliente.getIdClient());
             if (consulta.isEmpty()){
                 return clienteRepositorio.save(cliente);
             }else{

@@ -23,10 +23,10 @@ public class ReservaServicio {
 
     public Reserva save(Reserva reserva){
         //Verificar si el id es nulo
-        if(reserva.getNumId()==null){
+        if(reserva.getidReservation()==null){
             return reservaRepositorio.save(reserva);
         }else{//Verifico si existe o no en la base de datos
-            Optional<Reserva> consulta=reservaRepositorio.getReserva(reserva.getNumId());
+            Optional<Reserva> consulta=reservaRepositorio.getReserva(reserva.getidReservation());
             if (consulta.isEmpty()){
                 return reservaRepositorio.save(reserva);
             }else{

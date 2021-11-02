@@ -16,7 +16,7 @@ public class AuditorioRepositorio {
     public List<Auditorio>getAll(){
         return (List<Auditorio>)auditorioCrudRepositorio.findAll();
     }
-    public Optional<Auditorio>getDepartamento(int id){
+    public Optional<Auditorio>getAuditorio(int id){
         return auditorioCrudRepositorio.findById(id);
     }
     public Auditorio save(Auditorio dpto){

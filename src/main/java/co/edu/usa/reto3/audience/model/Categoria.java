@@ -14,8 +14,8 @@ public class Categoria implements Serializable{
     private String name;
     private String description;
 
-    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "categoria")
-    @JsonIgnoreProperties("categoria")
+    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "category")
+    @JsonIgnoreProperties("category")
     private List<Auditorio> audiences;
 
     public Integer getId() {

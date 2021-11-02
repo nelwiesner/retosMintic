@@ -21,29 +21,29 @@ import co.edu.usa.reto3.audience.service.AuditorioServicio;
     RequestMethod.DELETE,RequestMethod.PUT})
 public class AuditorioControlador {
     @Autowired
-    private AuditorioServicio departamentoServicio;
+    private AuditorioServicio auditorioServicio;
 
     @GetMapping("/all")
-    public List<Auditorio>getDepartamentos(){
-        return departamentoServicio.getAll();
+    public List<Auditorio>getAuditorios(){
+        return auditorioServicio.getAll();
     }
 
     @GetMapping("/{id}")
-    public Optional<Auditorio>getDepartamento(@PathVariable("id") int id){
-        return departamentoServicio.getDepartamento(id);
+    public Optional<Auditorio>getAuditorio(@PathVariable("id") int id){
+        return auditorioServicio.getAuditorio(id);
     }
 
     @PostMapping("/save")
     @ResponseStatus(HttpStatus.CREATED)
     public Auditorio save(@RequestBody Auditorio dpto){
-        return departamentoServicio.save(dpto);
+        return auditorioServicio.save(dpto);
     }
 
-    public AuditorioServicio getDepartamentoServicio() {
-        return departamentoServicio;
+    public AuditorioServicio getAuditorioServicio() {
+        return auditorioServicio;
     }
 
-    public void setDepartamentoServicio(AuditorioServicio departamentoServicio) {
-        this.departamentoServicio = departamentoServicio;
+    public void setAuditorioServicio(AuditorioServicio auditorioServicio) {
+        this.auditorioServicio = auditorioServicio;
     }
 }

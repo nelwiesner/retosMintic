@@ -18,15 +18,15 @@ public class Auditorio implements Serializable {
 
     @ManyToOne
     @JoinColumn(name="categoria_id")
-    @JsonIgnoreProperties("auditorios")
+    @JsonIgnoreProperties("audiences")
     private Categoria category;
 
-    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "auditorio")
-    @JsonIgnoreProperties("auditorio")
+    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "audience")
+    @JsonIgnoreProperties("audience")
     private List<Mensaje> messages;
 
-    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "auditorio")
-    @JsonIgnoreProperties("auditorio")
+    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "audience")
+    @JsonIgnoreProperties("audience")
     private List<Reserva> reservations;
    
     public Integer getId() {

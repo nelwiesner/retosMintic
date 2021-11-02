@@ -1,9 +1,7 @@
 package co.edu.usa.reto3.audience.model;
 
 import java.io.Serializable;
-import java.util.List;
 import javax.persistence.*;
-import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @Entity
 @Table(name="administrador")
@@ -15,10 +13,6 @@ public class Administrador implements Serializable{
     private String nombreAdministrador;
     private String emailAdministrador;
     private String paswordAdministrador;
-
-    @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "administrador")
-    @JsonIgnoreProperties("administrador")
-    private List<Auditorio> auditorios;
     
     public Integer getNumId() {
         return numId;

@@ -23,10 +23,10 @@ public class MensajeServicio {
 
     public Mensaje save(Mensaje mensaje){
         //Verificar si el id es nulo
-        if(mensaje.getNumId()==null){
+        if(mensaje.getIdMessage()==null){
             return mensajeRepositorio.save(mensaje);
         }else{//Verifico si existe o no en la base de datos
-            Optional<Mensaje> consulta=mensajeRepositorio.getMensaje(mensaje.getNumId());
+            Optional<Mensaje> consulta=mensajeRepositorio.getMensaje(mensaje.getIdMessage());
             if (consulta.isEmpty()){
                 return mensajeRepositorio.save(mensaje);
             }else{

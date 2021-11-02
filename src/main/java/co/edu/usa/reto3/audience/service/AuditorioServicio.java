@@ -24,10 +24,10 @@ public class AuditorioServicio {
 
     public Auditorio save(Auditorio dpto){
         //Verificar si el id es nulo
-        if (dpto.getNumId()==null) {
+        if (dpto.getId()==null) {
             return auditorioRepositorio.save(dpto);
         }else{//Verifico si existe el id o no en la base de datos
-            Optional<Auditorio> consulta=auditorioRepositorio.getAuditorio(dpto.getNumId());
+            Optional<Auditorio> consulta=auditorioRepositorio.getAuditorio(dpto.getId());
         if (consulta.isEmpty()) {
             return auditorioRepositorio.save(dpto);
         }else{

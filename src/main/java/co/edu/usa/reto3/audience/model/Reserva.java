@@ -17,18 +17,13 @@ public class Reserva implements Serializable{
 
     @ManyToOne
     @JoinColumn(name="auditorio_id")
-    @JsonIgnoreProperties("reserva")
+    @JsonIgnoreProperties("reservations")
     private Auditorio audience;
 
     @ManyToOne
-    @JoinColumn(name="cliente_id")
-    @JsonIgnoreProperties("reserva")
+    @JoinColumn(name="cliente_idClient")
+    @JsonIgnoreProperties("reservations")
     private Cliente client;
-
-    @ManyToOne
-    @JoinColumn(name="calificacion_id")
-    @JsonIgnoreProperties("reserva")
-    private Calificacion score;
 
     public Integer getidReservation() {
         return idReservation;
@@ -48,18 +43,10 @@ public class Reserva implements Serializable{
     public void setdevolutionDate(Date devolutionDate) {
         this.devolutionDate = devolutionDate;
     }
-    public String getStatusReserva() {
-        return statusReserva;
+    public String getStatus() {
+        return status;
     }
-    public void setStatusReserva(String statusReserva) {
-        this.statusReserva = statusReserva;
+    public void setStatus(String status) {
+        this.status = status;
     }
-    public String getEmailReserva() {
-        return emailReserva;
-    }
-    public void setEmailReserva(String emailReserva) {
-        this.emailReserva = emailReserva;
-    }
-
-   
 }
