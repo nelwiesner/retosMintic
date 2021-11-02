@@ -34,5 +34,17 @@ public class Mensaje implements Serializable{
     public void setMessageText(String messageText) {
         this.messageText = messageText;
     }
+    public Auditorio getAudience() {
+        return audience;
+    }
+    public void setAudience(Auditorio audience) {
+        this.audience = audience;
+    }
+    public Cliente getClient() {
+        return client;
+    }
+    public void setClient(Cliente client) {
+        this.client = client;
+    }
 
 }

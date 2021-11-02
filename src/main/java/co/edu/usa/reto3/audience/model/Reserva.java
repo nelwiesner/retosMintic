@@ -13,7 +13,7 @@ public class Reserva implements Serializable{
     private Integer idReservation;
     private Date startDate;
     private Date devolutionDate;
-    private String status;
+    private String status="created";
 
     @ManyToOne
     @JoinColumn(name="auditorio_id")
@@ -25,28 +25,52 @@ public class Reserva implements Serializable{
     @JsonIgnoreProperties("reservations")
     private Cliente client;
 
-    public Integer getidReservation() {
+    public Integer getIdReservation() {
         return idReservation;
     }
-    public void setidReservation(Integer idReservation) {
+
+    public void setIdReservation(Integer idReservation) {
         this.idReservation = idReservation;
     }
-    public Date getstartDate() {
+
+    public Date getStartDate() {
         return startDate;
     }
-    public void setstartDate(Date startDate) {
+
+    public void setStartDate(Date startDate) {
         this.startDate = startDate;
     }
-    public Date getdevolutionDate() {
+
+    public Date getDevolutionDate() {
         return devolutionDate;
     }
-    public void setdevolutionDate(Date devolutionDate) {
+
+    public void setDevolutionDate(Date devolutionDate) {
         this.devolutionDate = devolutionDate;
     }
+
     public String getStatus() {
         return status;
     }
+
     public void setStatus(String status) {
         this.status = status;
     }
+
+    public Auditorio getAudience() {
+        return audience;
+    }
+
+    public void setAudience(Auditorio audience) {
+        this.audience = audience;
+    }
+
+    public Cliente getClient() {
+        return client;
+    }
+
+    public void setClient(Cliente client) {
+        this.client = client;
+    }
+    
 }

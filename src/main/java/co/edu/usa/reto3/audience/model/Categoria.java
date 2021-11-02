@@ -36,5 +36,11 @@ public class Categoria implements Serializable{
     public void setDescription(String description) {
         this.description = description;
     }
-
+    public List<Auditorio> getAudiences() {
+        return audiences;
+    }
+    public void setAudiences(List<Auditorio> audiences) {
+        this.audiences = audiences;
+    }
+ 
 }

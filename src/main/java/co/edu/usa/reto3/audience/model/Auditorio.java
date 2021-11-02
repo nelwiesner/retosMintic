@@ -11,8 +11,8 @@ public class Auditorio implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
-    private String owner;
     private String name;
+    private String owner;
     private Integer capacity;
     private String description;
 
@@ -28,21 +28,13 @@ public class Auditorio implements Serializable {
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "audience")
     @JsonIgnoreProperties("audience")
     private List<Reserva> reservations;
-   
+
     public Integer getId() {
         return id;
     }
 
     public void setId(Integer id) {
         this.id = id;
-    }
-
-    public String getOwner() {
-        return owner;
-    }
-
-    public void setOwner(String owner) {
-        this.owner = owner;
     }
 
     public String getName() {
@@ -53,6 +45,14 @@ public class Auditorio implements Serializable {
         this.name = name;
     }
 
+    public String getOwner() {
+        return owner;
+    }
+
+    public void setOwner(String owner) {
+        this.owner = owner;
+    }
+
     public Integer getCapacity() {
         return capacity;
     }
@@ -61,11 +61,36 @@ public class Auditorio implements Serializable {
         this.capacity = capacity;
     }
 
-    public String getDecripcion() {
+    public String getDescription() {
         return description;
     }
 
-    public void setDecripcion(String description) {
+    public void setDescription(String description) {
         this.description = description;
     }
+
+    public Categoria getCategory() {
+        return category;
+    }
+
+    public void setCategory(Categoria category) {
+        this.category = category;
+    }
+
+    public List<Mensaje> getMessages() {
+        return messages;
+    }
+
+    public void setMessages(List<Mensaje> messages) {
+        this.messages = messages;
+    }
+
+    public List<Reserva> getReservations() {
+        return reservations;
+    }
+
+    public void setReservations(List<Reserva> reservations) {
+        this.reservations = reservations;
+    }
+     
 }
