@@ -22,11 +22,11 @@ public class Auditorio implements Serializable {
     private Categoria category;
 
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "audience")
-    @JsonIgnoreProperties("audience")
+    @JsonIgnoreProperties({"audience", "client"})
     private List<Mensaje> messages;
 
     @OneToMany(cascade = {CascadeType.PERSIST}, mappedBy = "audience")
-    @JsonIgnoreProperties("audience")
+    @JsonIgnoreProperties({"audience", "client"})
     private List<Reserva> reservations;
 
     public Integer getId() {
