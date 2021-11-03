@@ -25,6 +25,8 @@ public class Reserva implements Serializable{
     @JsonIgnoreProperties({"reservations","messages"})
     private Cliente client;
 
+    private String score;
+
     public Integer getIdReservation() {
         return idReservation;
     }
@@ -71,6 +73,14 @@ public class Reserva implements Serializable{
 
     public void setClient(Cliente client) {
         this.client = client;
+    }
+
+    public String getScore() {
+        return score;
+    }
+
+    public void setScore(String score) {
+        this.score = score;
     }
     
 }
