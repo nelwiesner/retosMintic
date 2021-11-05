@@ -18,7 +18,12 @@ public class ClienteRepositorio {
     public Optional<Cliente>getCliente(int id){
         return clienteCrudRepositorio.findById(id);
     }
-    public Cliente save(Cliente dpto){
-        return clienteCrudRepositorio.save(dpto);
+    
+    public Cliente save(Cliente cliente){
+        return clienteCrudRepositorio.save(cliente);
+    }
+
+    public void delete(Cliente cliente){
+        clienteCrudRepositorio.delete(cliente);
     }
 }

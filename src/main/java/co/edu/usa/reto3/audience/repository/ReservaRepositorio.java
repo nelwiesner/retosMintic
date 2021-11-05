@@ -18,7 +18,11 @@ public class ReservaRepositorio {
     public Optional<Reserva>getReserva(int id){
         return reservaCrudRepositorio.findById(id);
     }
-    public Reserva save(Reserva dpto){
-        return reservaCrudRepositorio.save(dpto);
+    public Reserva save(Reserva reserva){
+        return reservaCrudRepositorio.save(reserva);
+    }
+
+    public void delete(Reserva reserva){
+        reservaCrudRepositorio.delete(reserva);
     }
 }

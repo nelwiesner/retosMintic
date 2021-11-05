@@ -19,7 +19,12 @@ public class CalificacionRepositorio {
     public Optional<Calificacion>getCalificacion(int id){
         return calificacionCrudRepositorio.findById(id);
     }
-    public Calificacion save(Calificacion dpto){
-        return calificacionCrudRepositorio.save(dpto);
+    
+    public Calificacion save(Calificacion calificacion){
+        return calificacionCrudRepositorio.save(calificacion);
+    }
+
+    public void delete(Calificacion calificacion){
+        calificacionCrudRepositorio.delete(calificacion);
     }
 }

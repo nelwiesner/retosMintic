@@ -19,7 +19,10 @@ public class AuditorioRepositorio {
     public Optional<Auditorio>getAuditorio(int id){
         return auditorioCrudRepositorio.findById(id);
     }
-    public Auditorio save(Auditorio dpto){
-        return auditorioCrudRepositorio.save(dpto);
+    public Auditorio save(Auditorio auditorio){
+        return auditorioCrudRepositorio.save(auditorio);
+    }
+    public void delete (Auditorio auditorio){
+        auditorioCrudRepositorio.delete(auditorio);
     }
 }

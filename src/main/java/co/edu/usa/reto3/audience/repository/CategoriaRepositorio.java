@@ -18,7 +18,11 @@ public class CategoriaRepositorio {
     public Optional<Categoria>getCategoria(int id){
         return categoriaCrudRepositorio.findById(id);
     }
-    public Categoria save(Categoria dpto){
-        return categoriaCrudRepositorio.save(dpto);
+    public Categoria save(Categoria categoria){
+        return categoriaCrudRepositorio.save(categoria);
+    }
+
+    public void delete(Categoria categoria){
+        categoriaCrudRepositorio.delete(categoria);
     }
 }

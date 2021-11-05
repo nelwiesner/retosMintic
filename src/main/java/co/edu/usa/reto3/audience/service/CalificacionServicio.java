@@ -34,4 +34,30 @@ public class CalificacionServicio {
             }
         }   
     }
+
+    public Calificacion update(Calificacion calificacion){
+        if (calificacion.getNumId()!=null){
+            Optional<Calificacion> consulta=calificacionRepositorio.getCalificacion(calificacion.getNumId());
+            if (!consulta.isEmpty()) {
+                if(calificacion.getCalificacion()!=null){
+                    consulta.get().setCalificacion(calificacion.getCalificacion());
+                }
+				if(calificacion.getMensaje()!=null){
+                    consulta.get().setMensaje(calificacion.getMensaje());
+                }                
+                return calificacionRepositorio.save(consulta.get());
+            }
+        }
+        return calificacion;
+    }
+	
+    public boolean deleteCalificacion(int numId){
+        Optional<Calificacion> consulta=calificacionRepositorio.getCalificacion(numId);
+        if (!consulta.isEmpty()) {
+            calificacionRepositorio.delete(consulta.get());
+            return true;
+            
+        }
+        return false;
+    }
 }

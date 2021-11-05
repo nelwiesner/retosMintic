@@ -18,7 +18,10 @@ public class AdministradorRepositorio {
     public Optional<Administrador>getAdministrador(int id){
         return administradorCrudRepositorio.findById(id);
     }
-    public Administrador save(Administrador dpto){
-        return administradorCrudRepositorio.save(dpto);
+    public Administrador save(Administrador administrador){
+        return administradorCrudRepositorio.save(administrador);
+    }
+    public void delete(Administrador administrador){
+        administradorCrudRepositorio.delete(administrador);
     }
 }

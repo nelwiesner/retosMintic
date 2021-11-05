@@ -18,7 +18,11 @@ public class MensajeRepositorio {
     public Optional<Mensaje>getMensaje(int id){
         return mensajeCrudRepositorio.findById(id);
     }
-    public Mensaje save(Mensaje dpto){
-        return mensajeCrudRepositorio.save(dpto);
+    public Mensaje save(Mensaje mensaje){
+        return mensajeCrudRepositorio.save(mensaje);
+    }
+
+    public void delete(Mensaje mensaje){
+        mensajeCrudRepositorio.delete(mensaje);
     }
 }

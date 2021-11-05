@@ -23,15 +23,44 @@ public class AdministradorServicio {
 
     public Administrador save(Administrador administrador){
         //Verificar si el id es nulo
-        if(administrador.getNumId()==null){
+        if(administrador.getId()==null){
             return administradorRepositorio.save(administrador);
         }else{//Verifico si existe o no en la base de datos
-            Optional<Administrador> consulta=administradorRepositorio.getAdministrador(administrador.getNumId());
+            Optional<Administrador> consulta=administradorRepositorio.getAdministrador(administrador.getId());
             if (consulta.isEmpty()){
                 return administradorRepositorio.save(administrador);
             }else{
                 return administrador;
             }
         }   
+    }
+    public Administrador update(Administrador administrador){
+        if (administrador.getId()!=null){
+            Optional<Administrador> consulta=administradorRepositorio.getAdministrador(administrador.getId());
+            if (!consulta.isEmpty()) {
+                if(administrador.getNombreAdministrador()!=null){
+                    consulta.get().setNombreAdministrador(administrador.getNombreAdministrador());
+                }
+                if(administrador.getEmailAdministrador()!=null){
+                    consulta.get().setEmailAdministrador(administrador.getEmailAdministrador());
+                }
+                if(administrador.getPaswordAdministrador()!=null){
+                    consulta.get().setPaswordAdministrador(administrador.getPaswordAdministrador());
+                }
+                
+                return administradorRepositorio.save(consulta.get());
+            }
+        }
+        return administrador;
+    }
+	
+    public boolean deleteAdministrador(int numId){
+        Optional<Administrador> consulta=administradorRepositorio.getAdministrador(numId);
+        if (!consulta.isEmpty()) {
+            administradorRepositorio.delete(consulta.get());
+            return true;
+            
+        }
+        return false;
     }
 }

@@ -9,16 +9,16 @@ public class Administrador implements Serializable{
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer numId;
+    private Integer id;
     private String nombreAdministrador;
     private String emailAdministrador;
     private String paswordAdministrador;
     
-    public Integer getNumId() {
-        return numId;
+    public Integer getId() {
+        return id;
     }
-    public void setNumId(Integer numId) {
-        this.numId = numId;
+    public void setId(Integer id) {
+        this.id = id;
     }
     public String getNombreAdministrador() {
         return nombreAdministrador;

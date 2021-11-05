@@ -34,5 +34,38 @@ public class AuditorioServicio {
             return dpto;
         }
         }
-    }  
+    }
+
+    public Auditorio update(Auditorio auditorio){
+        if (auditorio.getId()!=null){
+            Optional<Auditorio> consulta=auditorioRepositorio.getAuditorio(auditorio.getId());
+            if (!consulta.isEmpty()) {
+                if(auditorio.getOwner()!=null){
+                    consulta.get().setOwner(auditorio.getOwner());
+                }
+                if(auditorio.getCapacity()!=null){
+                    consulta.get().setCapacity(auditorio.getCapacity());
+                }
+                if(auditorio.getName()!=null){
+                    consulta.get().setName(auditorio.getName());
+                }
+                if(auditorio.getDescription()!=null){
+                    consulta.get().setDescription(auditorio.getDescription());
+                }
+
+                return auditorioRepositorio.save(consulta.get());
+            }
+        }
+        return auditorio;
+    }
+    
+    public boolean deleteAuditorio(int id){
+        Optional<Auditorio> consulta=auditorioRepositorio.getAuditorio(id);
+        if (!consulta.isEmpty()) {
+            auditorioRepositorio.delete(consulta.get());
+            return true;
+            
+        }
+        return false;
+    }
 }
