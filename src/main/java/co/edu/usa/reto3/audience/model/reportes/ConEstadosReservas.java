@@ -1,27 +1,27 @@
 package co.edu.usa.reto3.audience.model.reportes;
 
 public class ConEstadosReservas {
-    private int completadas;
-    private int canceladas;
+    private int completed;
+    private int cancelled;
 
-    public ConEstadosReservas(int completadas, int canceladas) {
-        this.completadas = completadas;
-        this.canceladas = canceladas;
+    public ConEstadosReservas(int completed, int cancelled) {
+        this.completed = completed;
+        this.cancelled = cancelled;
     }
 
-    public int getCompletadas() {
-        return completadas;
+    public int getCompleted() {
+        return completed;
     }
 
-    public void setCompletadas(int completadas) {
-        this.completadas = completadas;
+    public void setCompleted(int completed) {
+        this.completed = completed;
     }
 
-    public int getCanceladas() {
-        return canceladas;
+    public int getCancelled() {
+        return cancelled;
     }
 
-    public void setCanceladas(int canceladas) {
-        this.canceladas = canceladas;
+    public void setCancelled(int cancelled) {
+        this.cancelled = cancelled;
     }
 }

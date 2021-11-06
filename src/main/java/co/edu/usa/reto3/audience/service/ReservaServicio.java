@@ -78,10 +78,10 @@ public class ReservaServicio {
     }
 
     public ConEstadosReservas getReporteEstados() {
-        List<Reserva> activos = reservaRepositorio.getReservasPorEstado("Completadas");
-        List<Reserva> inactivos = reservaRepositorio.getReservasPorEstado("Canceladas");
+        List<Reserva> completed = reservaRepositorio.getReservasPorEstado("Completed");
+        List<Reserva> cancelled = reservaRepositorio.getReservasPorEstado("Cancelled");
 
-        ConEstadosReservas reporteEstado = new ConEstadosReservas(activos.size(), inactivos.size());
+        ConEstadosReservas reporteEstado = new ConEstadosReservas(completed.size(), cancelled.size());
 
         return reporteEstado;
     }

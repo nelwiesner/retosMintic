@@ -47,7 +47,7 @@ public class ReservaControlador {
     }
 
     @GetMapping("/report-status")
-    public ConEstadosReservas getReprteEstados(){
+    public ConEstadosReservas getReporteEstados(){
         return reservaServicio.getReporteEstados();
     }
 
