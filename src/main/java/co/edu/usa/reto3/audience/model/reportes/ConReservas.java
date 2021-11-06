@@ -17,10 +17,10 @@ public class ConReservas {
     public void setTotal(Long total) {
         this.total = total;
     }
-    public Cliente getCliente() {
+    public Cliente getClient() {
         return client;
     }
-    public void setCliente(Cliente client) {
+    public void setClient(Cliente client) {
         this.client = client;
     }
             
