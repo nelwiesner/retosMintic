@@ -19,9 +19,11 @@ public class ReservaRepositorio {
     public List<Reserva>getAll(){
         return (List<Reserva>)reservaCrudRepositorio.findAll();
     }
+
     public Optional<Reserva>getReserva(int id){
         return reservaCrudRepositorio.findById(id);
     }
+    
     public Reserva save(Reserva reserva){
         return reservaCrudRepositorio.save(reserva);
     }
