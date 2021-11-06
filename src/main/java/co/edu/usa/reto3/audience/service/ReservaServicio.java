@@ -72,38 +72,38 @@ public class ReservaServicio {
         return false;
     }
 
-    public List<ConReservas> getTopClientes(){
+    public List<ConReservas> getTopClientes() {
         return reservaRepositorio.getTopClientes();
-                
+
     }
 
-    public ConEstadosReservas getReporteEstados(){
-        List<Reserva> activos=reservaRepositorio.getReservasPorEstado("Completadas");
-        List<Reserva> inactivos=reservaRepositorio.getReservasPorEstado("Canceladas");
+    public ConEstadosReservas getReporteEstados() {
+        List<Reserva> activos = reservaRepositorio.getReservasPorEstado("Completadas");
+        List<Reserva> inactivos = reservaRepositorio.getReservasPorEstado("Canceladas");
 
-        ConEstadosReservas reporteEstado= new ConEstadosReservas(activos.size(), inactivos.size());
+        ConEstadosReservas reporteEstado = new ConEstadosReservas(activos.size(), inactivos.size());
 
         return reporteEstado;
     }
 
-    public List<Reserva> getReservaFechas(String fecha1, String fecha2){
-        SimpleDateFormat formato= new SimpleDateFormat("yyyy-MM-dd");
-        Date fechaIni=new Date();
-        Date fechaFin=new Date();
+    public List<Reserva> getReservaFechas(String fecha1, String fecha2) {
+        SimpleDateFormat formato = new SimpleDateFormat("yyyy-MM-dd");
+        Date fechaIni = new Date();
+        Date fechaFin = new Date();
 
         try {
-            fechaIni=formato.parse(fecha1);
-            fechaFin=formato.parse(fecha2);           
+            fechaIni = formato.parse(fecha1);
+            fechaFin = formato.parse(fecha2);
         } catch (ParseException e) {
             e.printStackTrace();
         }
 
         if (fechaIni.before(fechaFin)) {
             return reservaRepositorio.getReservaFechas(fechaIni, fechaFin);
-            
+
         } else {
             return new ArrayList<>();
-            
+
         }
     }
 }

@@ -35,7 +35,7 @@ public class ReservaRepositorio {
     }
 
     public List<Reserva> getReservaFechas(Date fechaIni, Date fechaFin){
-        return reservaCrudRepositorio.findAllByFechaInicioAfterAndFechaInicioBefore(fechaIni, fechaFin);
+        return reservaCrudRepositorio.findAllByStartDateAfterAndStartDateBefore(fechaIni, fechaFin);
     }
 
     public List<ConReservas> getTopClientes(){

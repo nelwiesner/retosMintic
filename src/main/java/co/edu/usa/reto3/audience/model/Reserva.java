@@ -11,9 +11,9 @@ public class Reserva implements Serializable{
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer idReservation;
-    private Date startDate;
+    private Date startDate; //Cantidad de reservas que iniciaron en un periodo
     private Date devolutionDate;
-    private String status="created";
+    private String status; //Cantidad de reservas Completadas y Canceladas
 
     @ManyToOne
     @JoinColumn(name="auditorio_id")
@@ -26,8 +26,6 @@ public class Reserva implements Serializable{
     private Cliente client;
 
     private String score;
-    private String estado; //Cantidad de reservas Completadas y Canceladas
-    private Date fechaInicio; //Cantidad de reservas que iniciaron en un periodo
 
     public Integer getIdReservation() {
         return idReservation;
@@ -85,22 +83,4 @@ public class Reserva implements Serializable{
         this.score = score;
     }
 
-    public String getEstado() {
-        return estado;
-    }
-
-    public void setEstado(String estado) {
-        this.estado = estado;
-    }
-
-    public Date getFechaInicio() {
-        return fechaInicio;
-    }
-
-    public void setFechaInicio(Date fechaInicio) {
-        this.fechaInicio = fechaInicio;
-    }
-
-    
-    
 }

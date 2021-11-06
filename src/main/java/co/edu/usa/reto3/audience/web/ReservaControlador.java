@@ -46,17 +46,17 @@ public class ReservaControlador {
 
     }
 
-    @GetMapping("/reporteEstados")
+    @GetMapping("/report-status")
     public ConEstadosReservas getReprteEstados(){
         return reservaServicio.getReporteEstados();
     }
 
-    @GetMapping("/reporteClientes")
+    @GetMapping("/report-clients")
     public List<ConReservas> getTopClientes(){
         return reservaServicio.getTopClientes();
     }
 
-    @GetMapping("/reporteFechas/{fechaIni}/{fechaFin}")
+    @GetMapping("/report-dates/{fechaIni}/{fechaFin}")
     public List<Reserva> getReservaFechas(@PathVariable("fechaIni") String fecha1, @PathVariable("fechaFin") String fecha2){
         return reservaServicio.getReservaFechas(fecha1, fecha2);
 
