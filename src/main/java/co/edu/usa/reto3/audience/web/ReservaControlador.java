@@ -7,6 +7,8 @@ import org.springframework.web.bind.annotation.*;
 import org.springframework.http.HttpStatus;
 import co.edu.usa.reto3.audience.model.Reserva;
 import co.edu.usa.reto3.audience.service.ReservaServicio;
+import co.edu.usa.reto3.audience.model.reportes.ConReservas;
+import co.edu.usa.reto3.audience.model.reportes.ConEstadosReservas;
 
 @RestController
 @RequestMapping("/api/Reservation")
@@ -41,6 +43,22 @@ public class ReservaControlador {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public boolean deleteReserva(@PathVariable("idReservation") int idReservation){
         return reservaServicio.deleteReserva(idReservation);
+
+    }
+
+    @GetMapping("/reporteEstados")
+    public ConEstadosReservas getReprteEstados(){
+        return reservaServicio.getReporteEstados();
+    }
+
+    @GetMapping("/reporteClientes")
+    public List<ConReservas> getTopClientes(){
+        return reservaServicio.getTopClientes();
+    }
+
+    @GetMapping("/reporteFechas/{fechaIni}/{fechaFin}")
+    public List<Reserva> getReservaFechas(@PathVariable("fechaIni") String fecha1, @PathVariable("fechaFin") String fecha2){
+        return reservaServicio.getReservaFechas(fecha1, fecha2);
 
     }
 }

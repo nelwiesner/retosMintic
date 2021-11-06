@@ -26,6 +26,8 @@ public class Reserva implements Serializable{
     private Cliente client;
 
     private String score;
+    private String estado; //Cantidad de reservas Completadas y Canceladas
+    private Date fechaInicio; //Cantidad de reservas que iniciaron en un periodo
 
     public Integer getIdReservation() {
         return idReservation;
@@ -82,5 +84,23 @@ public class Reserva implements Serializable{
     public void setScore(String score) {
         this.score = score;
     }
+
+    public String getEstado() {
+        return estado;
+    }
+
+    public void setEstado(String estado) {
+        this.estado = estado;
+    }
+
+    public Date getFechaInicio() {
+        return fechaInicio;
+    }
+
+    public void setFechaInicio(Date fechaInicio) {
+        this.fechaInicio = fechaInicio;
+    }
+
+    
     
 }
