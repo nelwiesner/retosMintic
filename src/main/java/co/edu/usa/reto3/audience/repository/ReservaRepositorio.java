@@ -30,8 +30,8 @@ public class ReservaRepositorio {
         reservaCrudRepositorio.delete(reserva);
     }
 
-    public List<Reserva> getReservasPorEstado(String estado){
-        return reservaCrudRepositorio.findAllByEstado(estado);
+    public List<Reserva> getReservasPorEstado(String status){
+        return reservaCrudRepositorio.findAllByStatus(status);
     }
 
     public List<Reserva> getReservaFechas(Date fechaIni, Date fechaFin){

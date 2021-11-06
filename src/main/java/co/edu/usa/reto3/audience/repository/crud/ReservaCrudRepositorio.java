@@ -17,7 +17,7 @@ public interface ReservaCrudRepositorio extends CrudRepository<Reserva,Integer>{
     //Query Methods
     public List<Reserva> findAllByStartDateAfterAndStartDateBefore(Date fechIni, Date fechaFin);
 
-    public List<Reserva> findAllByEstado(String estado);
+    public List<Reserva> findAllByStatus(String status);
 
 
 }
