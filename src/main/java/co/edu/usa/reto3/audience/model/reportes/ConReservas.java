@@ -5,10 +5,10 @@ import co.edu.usa.reto3.audience.model.Cliente;
 public class ConReservas {
 
     private Long total;
-    private Cliente cliente;
-    public ConReservas(Long total, Cliente cliente) {
+    private Cliente client;
+    public ConReservas(Long total, Cliente client) {
         this.total = total;
-        this.cliente = cliente;
+        this.client = client;
     }
     
     public Long getTotal() {
@@ -18,10 +18,10 @@ public class ConReservas {
         this.total = total;
     }
     public Cliente getCliente() {
-        return cliente;
+        return client;
     }
-    public void setCliente(Cliente cliente) {
-        this.cliente = cliente;
+    public void setCliente(Cliente client) {
+        this.client = client;
     }
             
 }
