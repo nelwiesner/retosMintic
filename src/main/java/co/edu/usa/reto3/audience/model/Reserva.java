@@ -13,7 +13,7 @@ public class Reserva implements Serializable{
     private Integer idReservation;
     private Date startDate; //Cantidad de reservas que iniciaron en un periodo
     private Date devolutionDate;
-    private String status="created"; //Cantidad de reservas Completadas y Canceladas
+    private String status; //Cantidad de reservas Completadas y Canceladas
 
     @ManyToOne
     @JoinColumn(name="auditorio_id")
